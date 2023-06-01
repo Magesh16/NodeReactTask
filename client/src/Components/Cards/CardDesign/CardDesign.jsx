@@ -1,18 +1,31 @@
 import React from "react";
+import axios from "axios";
+import getCard from '../../Utils/AppUtils';
 import "./CardDesign.css";
 
 const CardDesign = ({
-  id,
-  image_url,
-  name,
-  age,
-  gender,
-  showPopup: showPopup,
-  setShowPopup: setShowPopup,
-  edit: edit,
-  setEdit: setEdit,
-  setId: setId,
+    data: data,
+    setData:setData,
+    index:index,
+    id,
+    image_url,
+    name,
+    age,
+    gender,
+    showPopup: showPopup,
+    setShowPopup: setShowPopup,
+    edit: edit,
+    setEdit: setEdit,
+    setId: setId,
 }) => {
+
+    async function handleDelete(id){
+        let response = await axios.delete(`http://localhost:4000/deleteUserInfo/${id}`);
+        if(response.status == 200){
+            getCard(setData, '/getUserInfo');
+        }
+    }
+
   return (
     <div className="container-div">
       <div className="card-container">
@@ -39,12 +52,14 @@ const CardDesign = ({
               onClick={() => {
                 setShowPopup(!showPopup);
                 setEdit(!edit);
-                setId(id)
+                setId(id);
               }}
             >
               Edit
             </button>
-            <button className="button-card">Delete</button>
+            <button className="button-card" onClick={()=>handleDelete(id)}>
+              Delete
+            </button>
           </div>
         </div>
       </div>

@@ -18,11 +18,14 @@ const Card = ({
 
   return (
     <div className="container">
-      {data.map((item) => {
+      {data.map((item, index) => {
         return (
           <>
             <div>
               <CardDesign
+                data= {data}
+                setData = {setData}
+                index ={index}
                 id ={item.id}
                 image_url={item.image_url}
                 name={item.name}

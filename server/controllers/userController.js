@@ -47,4 +47,14 @@ let updateUserInfo = async(req,res)=>{
         res.status(403).send({error:err.message, status:false});
     }
 }
-export {getUserInfo, postUserInfo, updateUserInfo,getUserInfoById};
+
+let deleteUserInfo = async(req,res)=>{
+    try{
+        let id = req.params.id;
+        await client.query('delete from public."userData" where id=$1',[id]);
+        res.status(200).send({message:"Deletion successfull, status:true"})
+    }catch(err){
+        res.status(403).send({error:err.message, status:false});
+    }
+}
+export {getUserInfo, postUserInfo, updateUserInfo,getUserInfoById,deleteUserInfo};

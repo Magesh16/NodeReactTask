@@ -1,0 +1,87 @@
+.popup-overlay{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+  .blur-background {
+    filter: blur(4px);
+  }
+  #dialog:nth-child(3) .MuiPaper-root{
+    background: rgba(0, 0, 0, 0.5);
+  }
+
+ .popup {
+    bottom: 0;
+    right: 200%;
+    width: 1000px;
+    height:450px;
+    padding: 20px;
+    /* background:rgb(122, 121, 121); */
+    border: 1px solid #ccc;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    justify-content: center;
+    z-index: 2;
+  }
+  .table-outer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top:50px;
+  }
+  label{
+    color: white;
+    font-size: 20px;
+    font-weight: 700;
+  }
+
+
+  .popup-submit{
+    margin-top:30px;
+    width:80px;
+    height: 34px;
+    justify-content: center;
+    align-items: center;
+    border-radius: 8px;
+    font-size: 15px;
+    color: white;
+    background-color: rgb(44, 128, 93);
+    border: none;
+  }
+  .popup-submit:hover{
+    background-color: rgb(72, 76, 77);
+  }
+.popup-table tr{
+   height:30px;
+}
+.popup-table td input{
+  width: 200px;
+  height:25px;
+  border-radius: 5px;
+  border: none  ;
+}
+  .popup-table td{
+    margin-top:20px;
+    padding:20px;
+    
+    
+  }
+
+  .close-icon{
+    display: block;
+    float: right;
+    color: white;
+    margin-right: 20px;
+    margin-top: 20px;
+    cursor: pointer;
+    width:40px;
+    height:40px;
+    font-size: larger;
+  }
+
+.button-outer
+{
+  display: flex;
+  justify-content: center;
+}
